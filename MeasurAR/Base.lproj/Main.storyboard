@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-DemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MeasurAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wut-ho-jVh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCQ-sS-VhK">
+                                <rect key="frame" x="0.0" y="475" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qui-It-ofl">
+                                        <rect key="frame" x="48" y="12.5" width="280" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="qd4-FB-nXZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="18R-6x-sbe"/>
+                                    <constraint firstItem="Qui-It-ofl" firstAttribute="centerY" secondItem="mCQ-sS-VhK" secondAttribute="centerY" id="3Mg-LQ-JQJ"/>
+                                    <constraint firstItem="Qui-It-ofl" firstAttribute="centerX" secondItem="mCQ-sS-VhK" secondAttribute="centerX" id="RYh-fJ-7sd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wut-ho-jVh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5FD-6x-OZc"/>
+                            <constraint firstItem="wut-ho-jVh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="H9V-5t-5NR"/>
+                            <constraint firstItem="mCQ-sS-VhK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mkj-TT-YOa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mCQ-sS-VhK" secondAttribute="bottom" constant="142" id="VSr-sk-9NO"/>
+                            <constraint firstItem="wut-ho-jVh" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aDX-Ze-flS"/>
+                            <constraint firstItem="wut-ho-jVh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eBQ-pe-7DS"/>
+                            <constraint firstItem="mCQ-sS-VhK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fL3-Oy-IOi"/>
+                            <constraint firstItem="mCQ-sS-VhK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ii7-7H-qXI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="displayLabel" destination="mCQ-sS-VhK" id="ueX-uv-VqS"/>
+                        <outlet property="sceneView" destination="wut-ho-jVh" id="8wQ-xg-cBg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>
