@@ -13,6 +13,9 @@
         <array key="AvenirNext.ttc">
             <string>AvenirNext-DemiBold</string>
         </array>
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--View Controller-->
@@ -46,12 +49,33 @@
                                     <constraint firstItem="Qui-It-ofl" firstAttribute="centerX" secondItem="mCQ-sS-VhK" secondAttribute="centerX" id="RYh-fJ-7sd"/>
                                 </constraints>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fG5-Pz-6tO">
+                                <rect key="frame" x="137.5" y="316" width="100" height="34"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.66274509800000003" blue="0.2666666667" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="xl1-4I-COr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="restartPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KER-zF-X2b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wut-ho-jVh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5FD-6x-OZc"/>
                             <constraint firstItem="wut-ho-jVh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="H9V-5t-5NR"/>
+                            <constraint firstItem="fG5-Pz-6tO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IwG-Vq-nJJ"/>
                             <constraint firstItem="mCQ-sS-VhK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mkj-TT-YOa"/>
+                            <constraint firstItem="fG5-Pz-6tO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OrV-Ov-geI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mCQ-sS-VhK" secondAttribute="bottom" constant="142" id="VSr-sk-9NO"/>
                             <constraint firstItem="wut-ho-jVh" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aDX-Ze-flS"/>
                             <constraint firstItem="wut-ho-jVh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eBQ-pe-7DS"/>
@@ -61,7 +85,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="displayLabel" destination="mCQ-sS-VhK" id="ueX-uv-VqS"/>
+                        <outlet property="displayLabel" destination="Qui-It-ofl" id="EAx-KS-soE"/>
+                        <outlet property="restartButton" destination="fG5-Pz-6tO" id="7vh-I5-y39"/>
                         <outlet property="sceneView" destination="wut-ho-jVh" id="8wQ-xg-cBg"/>
                     </connections>
                 </viewController>
