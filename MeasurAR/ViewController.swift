@@ -23,6 +23,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         sceneView.delegate = self
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
+        displayLabel.text = "Touch Screen to place 1st point"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,14 +45,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             dotNodes.forEach({ $0.removeFromParentNode() })
             sceneView.isUserInteractionEnabled = false
         }*/
-        switch dotNodes.count {
-        case 0:
-            displayLabel.text = "Touch Screen to place 1st point"
-        case 1:
-            displayLabel.text = "Now place 2nd point"
-        default:
-            sceneView.isUserInteractionEnabled = false
-        }
         
         if let touchLocation = touches.first?.location(in: sceneView) {
             let hitTestResults = sceneView.hitTest(touchLocation, types: .featurePoint)
@@ -59,6 +52,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             if let hitResult = hitTestResults.first {
                 showDot(at: hitResult)
             }
+        }
+        print(dotNodes.count)
+        switch dotNodes.count {
+        case 1:
+            displayLabel.text = "Now place 2nd point"
+            break
+        default:
+            sceneView.isUserInteractionEnabled = false
+            break
         }
     }
     
@@ -85,13 +87,26 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     
     func calculateDistance() {
+        let start = dotNodes[0]
+        let end = dotNodes[1]
         
+        let x = end.position.x - start.position.x
+        let y = end.position.y - start.position.y
+        let z = end.position.z - start.position.z
+        
+        let distance = abs(sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2)))
+        
+        print("Distance is %.2f meters", distance)
+        displayLabel.text = "Distance is " + String(format: "%.2f", distance) + " meters"
+        restartButton.isHidden = false
     }
     
     @IBAction func restartPressed(_ sender: Any) {
         dotNodes.forEach({ $0.removeFromParentNode() })
+        dotNodes.removeAll()
         restartButton.isHidden = true
         sceneView.isUserInteractionEnabled = true
+        displayLabel.text = "Touch Screen to place 1st point"
     }
     
 }
